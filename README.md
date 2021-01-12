@@ -1,5 +1,6 @@
 # GHP SH3LL
-
+[![Version](https://img.shields.io/badge/Version-0.1-brightgreen.svg?maxAge=259200)]()
+[![Stage](https://img.shields.io/badge/Release-Beta-green.svg)]()
 Stands for GrayHat Phantom Shell. Born to bypass modern WAFs most webshells can't penetrate.
 Uses a technique of obfuscation inspired by [Marijuana Shell](https://github.com/0x5a455553/MARIJUANA)
 
