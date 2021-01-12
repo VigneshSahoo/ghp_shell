@@ -6,7 +6,7 @@ Uses a technique of obfuscation inspired by [Marijuana Shell](https://github.com
 ## Default Password
 The default password of this shell  is ``` ghphantom ```
 
-To change password, modify ``` line 8 ``` of ghp.php
+To change password, modify ``` line 4 ``` of ghp.php
 
 ```php
 $password = "09faf3722078e2133fc4dd4e006d90e4"; // ghphantom
