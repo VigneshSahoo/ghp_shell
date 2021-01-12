@@ -1,6 +1,7 @@
 # GHP SH3LL
 
-Stands for GrayHat Phantom Shell. Born to bypass modern WAFs most webshells can't penetrate
+Stands for GrayHat Phantom Shell. Born to bypass modern WAFs most webshells can't penetrate.
+Uses a technique of obfuscation inspired by [Marijuana Shell](https://github.com/0x5a455553/MARIJUANA)
 
 ## Default Password
 The default password of this shell  is ``` ghphantom ```
